@@ -13,14 +13,14 @@ public class User {
     private String phoneNumber;
     private String birthDate;
     private Instant creationDate;
-    private Role role;
     private Address address;
+    private List<Role> role;
     private List<Course> courses;
 
     public User() {
     }
 
-    public User(Long id, String username, String password, String mail, String phoneNumber, String birthDate, Role role, Address address) {
+    public User(Long id, String username, String password, String mail, String phoneNumber, String birthDate, Address address) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -28,7 +28,7 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.birthDate = birthDate;
         this.address = address;
-        this.role = role;
+        this.role = new ArrayList<>();
         this.courses = new ArrayList<>();
     }
 
@@ -87,5 +87,21 @@ public class User {
     public void setCreationDate(Instant creationDate) {
         this.creationDate = creationDate;
     }
-    
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public List<Role> getRole() {
+        return role;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
 }

@@ -65,4 +65,8 @@ public class Course {
     public void setCreationDate(Instant creationDate) {
         this.creationDate = creationDate;
     }
+
+    public List<Note> getNotes() {
+        return notes;
+    }
 }
