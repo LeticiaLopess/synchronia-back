@@ -1,47 +1,29 @@
-package com.synchronia.letfolio.core.model;
+package com.synchronia.letfolio.entrypoint.rest.dto;
 
-import com.synchronia.letfolio.entrypoint.rest.dto.CourseDTO;
+import com.synchronia.letfolio.core.model.Note;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Course {
+public class CourseDTO {
 
-    private Long id;
     private String title;
     private String description;
     private List<Note> notes;
     private Instant completionDate;
     private Instant creationDate;
 
-    public Course() {
+    public CourseDTO() {
         this.notes = new ArrayList<>();
     }
 
-    public Course(Long id, String title, String description, Instant completionDate, Instant creationDate) {
-        this.id = id;
+    public CourseDTO( String title, String description, Instant completionDate, Instant creationDate) {
         this.title = title;
         this.description = description;
         this.completionDate = completionDate;
         this.creationDate = creationDate;
         this.notes = new ArrayList<>();
-    }
-
-    public Course(CourseDTO courseDTO) {
-        this.title = courseDTO.getTitle();
-        this.description = courseDTO.getDescription();
-        this.completionDate = courseDTO.getCompletionDate();
-        this.creationDate = courseDTO.getCreationDate();
-        this.notes = courseDTO.getNotes();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getTitle() {

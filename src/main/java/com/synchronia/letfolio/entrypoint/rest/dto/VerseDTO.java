@@ -1,44 +1,24 @@
-package com.synchronia.letfolio.core.model;
-
-import com.synchronia.letfolio.entrypoint.rest.dto.VerseDTO;
+package com.synchronia.letfolio.entrypoint.rest.dto;
 
 import java.time.Instant;
 
-public class Verse {
+public class VerseDTO {
 
-    private Long id;
     private String book;
     private String chapter;
     private Integer number;
     private String text;
     private Instant creationDate;
 
-    public Verse() {
+    public VerseDTO() {
     }
 
-    public Verse(Long id, String book, String chapter, Integer number, String text, Instant creationDate) {
-        this.id = id;
+    public VerseDTO(String book, String chapter, Integer number, String text, Instant creationDate) {
         this.book = book;
         this.chapter = chapter;
         this.number = number;
         this.text = text;
         this.creationDate = creationDate;
-    }
-
-    public Verse(VerseDTO verseDTO) {
-        this.book = verseDTO.getBook();
-        this.chapter = verseDTO.getChapter();
-        this.number = verseDTO.getNumber();
-        this.text = verseDTO.getText();
-        this.creationDate = verseDTO.getCreationDate();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getBook() {

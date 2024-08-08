@@ -1,14 +1,15 @@
-package com.synchronia.letfolio.core.model;
+package com.synchronia.letfolio.entrypoint.rest.dto;
 
-import com.synchronia.letfolio.entrypoint.rest.dto.UserDTO;
+import com.synchronia.letfolio.core.model.Address;
+import com.synchronia.letfolio.core.model.Course;
+import com.synchronia.letfolio.core.model.Role;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User {
+public class UserDTO {
 
-    private Long id;
     private String username;
     private String password;
     private String mail;
@@ -19,11 +20,10 @@ public class User {
     private List<Role> role;
     private List<Course> courses;
 
-    public User() {
+    public UserDTO() {
     }
 
-    public User(Long id, String username, String password, String mail, String phoneNumber, String birthDate, Address address) {
-        this.id = id;
+    public UserDTO(String username, String password, String mail, String phoneNumber, String birthDate, Address address) {
         this.username = username;
         this.password = password;
         this.mail = mail;
@@ -32,25 +32,6 @@ public class User {
         this.address = address;
         this.role = new ArrayList<>();
         this.courses = new ArrayList<>();
-    }
-
-    public User(UserDTO userDTO) {
-        this.username = userDTO.getUsername();
-        this.password = userDTO.getPassword();
-        this.mail = userDTO.getMail();
-        this.phoneNumber = userDTO.getPhoneNumber();
-        this.birthDate = userDTO.getBirthDate();
-        this.address = userDTO.getAddress();
-        this.role = userDTO.getRole();
-        this.courses = userDTO.getCourses();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getUsername() {
@@ -116,5 +97,4 @@ public class User {
     public List<Course> getCourses() {
         return courses;
     }
-
 }

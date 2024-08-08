@@ -1,44 +1,26 @@
-package com.synchronia.letfolio.core.model;
+package com.synchronia.letfolio.entrypoint.rest.dto;
 
-import com.synchronia.letfolio.entrypoint.rest.dto.NoteDTO;
+import com.synchronia.letfolio.core.model.Course;
 
 import java.time.Instant;
 
-public class Note {
+public class NoteDTO {
 
-    private Long id;
     private String title;
     private String content;
     private Course course;
     private byte[] image;
     private Instant creationDate;
 
-    public Note() {
+    public NoteDTO() {
     }
 
-    public Note(Long id, String title, String content, Course course, byte[] image, Instant creationDate) {
-        this.id = id;
+    public NoteDTO( String title, String content, Course course, byte[] image, Instant creationDate) {
         this.title = title;
         this.content = content;
         this.course = course;
         this.image = image;
         this.creationDate = creationDate;
-    }
-
-    public Note(NoteDTO noteDTO) {
-        this.title = noteDTO.getTitle();
-        this.content = noteDTO.getContent();
-        this.course = noteDTO.getCourse();
-        this.image = noteDTO.getImage();
-        this.creationDate = noteDTO.getCreationDate();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getTitle() {

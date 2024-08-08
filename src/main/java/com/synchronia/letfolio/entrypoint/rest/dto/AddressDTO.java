@@ -1,12 +1,7 @@
-package com.synchronia.letfolio.core.model;
-
-import com.synchronia.letfolio.entrypoint.rest.dto.AddressDTO;
-
+package com.synchronia.letfolio.entrypoint.rest.dto;
 import java.time.Instant;
 
-public class Address {
-
-    private Long id;
+public class AddressDTO {
     private String zipCode;
     private String street;
     private String number;
@@ -15,11 +10,7 @@ public class Address {
     private String uf;
     private Instant creationDate;
 
-    public Address() {
-    }
-
-    public Address(Long id, String zipCode, String street, String number, String neighborhood, String city, String uf, Instant creationDate) {
-        this.id = id;
+    public AddressDTO(String zipCode, String street, String number, String neighborhood, String city, String uf, Instant creationDate) {
         this.zipCode = zipCode;
         this.street = street;
         this.number = number;
@@ -27,24 +18,6 @@ public class Address {
         this.city = city;
         this.uf = uf;
         this.creationDate = creationDate;
-    }
-
-    public Address(AddressDTO addressDTO) {
-        this.zipCode = addressDTO.getZipCode();
-        this.street = addressDTO.getStreet();
-        this.number = addressDTO.getNumber();
-        this.neighborhood = addressDTO.getNeighborhood();
-        this.city = addressDTO.getCity();
-        this.uf = addressDTO.getUf();
-        this.creationDate = addressDTO.getCreationDate();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getZipCode() {
